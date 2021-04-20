@@ -3,8 +3,7 @@
     <pages>
         <page name='Introduction'/>
         <page name='Tortoise Examples'/>
-        <page name='Empty Canvas 1'/>
-        <page name='Empty Canvas 2'/>
+        <page name='Culminating Task'/>
         <page name='Empty Canvas 3'/>
         <page name='Emtpy Canvas 4'/>
         <page name='Empty Canvas 5'/>
@@ -19,5 +18,6 @@
         <page name='Empty Canvas 14'/>
         <page name='Empty Canvas 15'/>
         <page name='Blank canvas to copy'/>
+        <page name='Tortoise Practice'/>
     </pages>
 </playground>
