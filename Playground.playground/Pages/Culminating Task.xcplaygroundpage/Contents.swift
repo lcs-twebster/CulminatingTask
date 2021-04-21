@@ -196,9 +196,37 @@ func shapeRow () {
     }
 }
 
+//teach the turtle to move to the start of a new row
+func newRow () {
+    turtle.penUp()
+    turtle.backward(steps: 81 * squareSize)
+    turtle.left(by: 90)
+    turtle.forward(steps: 4 * squareSize)
+    turtle.right(by: 90)
+}
+
+//teach the turtle to fill the canvas with shapes and alternate colour rows
+func fillCanvas () {
+    for _ in 1...5 {
+        //darkest colour
+        shapeRow()
+        newRow()
+        //lighter colour
+        shapeRow()
+        newRow()
+        //lightest colour
+        shapeRow()
+        newRow()
+        //lighter colour
+        shapeRow()
+        newRow()
+    }
+}
 //BEGINNING OF CODE
 let squareSize = 5
  
+shapeRow()
+newRow()
 shapeRow()
 
 turtle.drawSelf()
