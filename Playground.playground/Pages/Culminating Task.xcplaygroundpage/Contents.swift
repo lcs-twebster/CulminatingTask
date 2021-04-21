@@ -212,30 +212,29 @@ func newRow () {
 func fillCanvas () {
     for _ in 1...5 {
         //darkest colour
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 75, alpha: 100))
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 60, alpha: 100))
         shapeRow()
         newRow()
         //lighter colour
-        turtle.setPenColor(to: Color.init(hue: 210, saturation: 100, brightness: 87, alpha: 100))
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 80, alpha: 100))
         shapeRow()
         newRow()
         //lightest colour
-        turtle.setPenColor(to: Color.init(hue: 200, saturation: 100, brightness: 100, alpha: 100))
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 100, alpha: 100))
         shapeRow()
         newRow()
         //lighter colour
-        turtle.setPenColor(to: Color.init(hue: 200, saturation: 100, brightness: 87, alpha: 100))
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 80, alpha: 100))
         shapeRow()
         newRow()
     }
 }
 
 //BEGINNING OF CODE
+//set square size
 let squareSize = 5
- 
+ //fill the canvas with the shapes
 fillCanvas()
-
-turtle.drawSelf()
 
 //turning off high performance
 canvas.highPerformance = false
