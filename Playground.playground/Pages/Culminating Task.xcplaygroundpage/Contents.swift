@@ -204,37 +204,77 @@ func newRow () {
     turtle.penUp()
     turtle.backward(steps: 81 * squareSize)
     turtle.left(by: 90)
-    turtle.forward(steps: 4 * squareSize)
+    turtle.forward(steps: 16 * squareSize)
     turtle.right(by: 90)
 }
 
-//teach the turtle to fill the canvas with shapes and alternate colour rows
-func fillCanvas () {
+//teach the turtle to fill the canvas with dark blue shapes
+func fillCanvasWithDarkBlue () {
     for _ in 1...5 {
         //darkest colour
         turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 60, alpha: 100))
         shapeRow()
         newRow()
-        //lighter colour
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 80, alpha: 100))
-        shapeRow()
-        newRow()
-        //lightest colour
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 100, alpha: 100))
-        shapeRow()
-        newRow()
-        //lighter colour
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 80, alpha: 100))
+    }
+}
+
+//teach the turtle to fill the canvas with medium blue shapes
+func fillCanvasWithMediumBlue () {
+    //move the turtle to starting position at bottom of canvas
+    turtle.penUp()
+    turtle.left(by: 90)
+    turtle.backward(steps: 76 * squareSize)
+    turtle.right(by: 90)
+    //draw the shapes
+    for _ in 1 ... 5 {
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 75, alpha: 100))
         shapeRow()
         newRow()
     }
+}
+
+//teach the turtle to fill the canvas with light blue shapes
+func fillCanvasWithLightBlue () {
+    //move turtle to starting point at bottom of canvas
+    turtle.penUp()
+    turtle.left(by: 90)
+    turtle.backward(steps: 76 * squareSize)
+    turtle.right(by: 90)
+    //draw the shapes
+    for _ in 1 ... 5 {
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 86, alpha: 100))
+        shapeRow()
+        newRow()
+    }
+    
+}
+
+//teach the turtle to fill the canvas with lightest blue shapes
+func fillCanvasWithLightestBlue () {
+    //move turtle to starting point at bottom of canvas
+    turtle.penUp()
+    turtle.left(by: 90)
+    turtle.backward(steps: 72 * squareSize)
+    turtle.right(by: 90)
+    //draw the shapes
+    for _ in 1 ... 5 {
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 98, alpha: 100))
+        shapeRow()
+        newRow()
+    }
+    
 }
 
 //BEGINNING OF CODE
 //set square size
 let squareSize = 5
  //fill the canvas with the shapes
-fillCanvas()
+fillCanvasWithDarkBlue()
+fillCanvasWithMediumBlue()
+fillCanvasWithLightBlue()
+fillCanvasWithLightestBlue()
+
+turtle.drawSelf()
 
 //turning off high performance
 canvas.highPerformance = false
