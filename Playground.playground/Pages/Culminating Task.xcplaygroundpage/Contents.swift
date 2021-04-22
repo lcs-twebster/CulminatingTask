@@ -43,26 +43,7 @@ canvas.highPerformance = true
 
 //FUNCTION GLOSSARY
 
-//teach the turtle to move from the origin to the centre of the canvas
-func turtleToMiddleOfCanvas() {
-    
-    //move turtle to middle of bottom axis
-    turtle.penUp()
-    turtle.forward(steps: canvas.width / 2)
-    turtle.currentHeading()
-    
-    //move turtle to center of canvas
-    turtle.left(by: 90)
-    turtle.currentHeading()
-    turtle.penUp()
-    turtle.forward(steps: canvas.height / 2)
-    
-    //turn the turtle to the right
-    turtle.right(by: 90)
-    
-}
-
-//teach the turtle to draw the shape
+//teach the turtle to draw the shape (made of rhombi)
 func drawShape () {
     turtle.penDown()
 
@@ -80,7 +61,7 @@ func drawShape () {
     turtle.left(by: 112.5)
 
     turtle.forward(steps: Int(round(Double(2 * squareSize) * Double(1.0).squareRoot())))
-
+//get into position for rhombus #2
     turtle.penUp()
 
     turtle.left(by: 67.5)
@@ -109,7 +90,7 @@ func drawShape () {
     turtle.right(by: 112.5)
 
     turtle.forward(steps: Int(round(Double(2 * squareSize) * Double(1.0).squareRoot())))
-
+//get into position for rhombus #3
     turtle.penUp()
 
     turtle.right(by: 67.5)
@@ -141,7 +122,7 @@ func drawShape () {
     turtle.right(by: 67.5)
 
     turtle.forward(steps: Int(round(Double(2 * squareSize) * Double(1.0).squareRoot())))
-
+//get into postition for rhombus #4
     turtle.penUp()
 
     turtle.right(by: 112.5)
@@ -174,7 +155,7 @@ func drawShape () {
     turtle.right(by: 112.5)
 
     turtle.forward(steps: Int(round(Double(2 * squareSize) * Double(1.0).squareRoot())))
-
+//get into postiton for the turtle to move on to the next shape
     turtle.penUp()
 
     turtle.right(by: 67.5)
@@ -192,14 +173,14 @@ func drawShape () {
     turtle.forward(steps: Int(round(Double(1 * squareSize) * Double(2.0).squareRoot())))
 }
 
-//teach the turtle to draw a row of 15 shapes
+//teach the turtle to draw a horizontal row of 15 of the shape
 func shapeRow () {
     for _ in 1...15 {
         drawShape()
     }
 }
 
-//teach the turtle to move to the start of a new row
+//teach the turtle to move to the start of a new row (top left corner of the row below)
 func newRow () {
     turtle.penUp()
     turtle.backward(steps: 81 * squareSize)
@@ -208,7 +189,7 @@ func newRow () {
     turtle.right(by: 90)
 }
 
-//teach the turtle to draw the rows dark blue shapes
+//teach the turtle to draw rows dark blue shapes every 3rd row
 func fillCanvasWithDarkBlue () {
     for _ in 1...7 {
         //darkest colour
@@ -218,7 +199,7 @@ func fillCanvasWithDarkBlue () {
     }
 }
 
-//teach the turtle to draw the rows medium blue shapes
+//teach the turtle to draw the rows medium blue shapes every 3rd row
 func fillCanvasWithMediumBlue () {
     //move the turtle to starting position at bottom of canvas
     turtle.penUp()
@@ -227,13 +208,13 @@ func fillCanvasWithMediumBlue () {
     turtle.right(by: 90)
     //draw the shapes
     for _ in 1 ... 7 {
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 75, alpha: 100))
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 80, alpha: 100))
         shapeRow()
         newRow()
     }
 }
 
-//teach the turtle to draw the rows of light blue shapes
+//teach the turtle to draw the rows of light blue shapes every 3rd row
 func fillCanvasWithLightBlue () {
     //move turtle to starting point at bottom of canvas
     turtle.penUp()
@@ -242,14 +223,14 @@ func fillCanvasWithLightBlue () {
     turtle.right(by: 90)
     //draw the shapes
     for _ in 1 ... 6 {
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 86, alpha: 100))
+        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 100, alpha: 100))
         shapeRow()
         newRow()
     }
     
 }
 
-//fill canvas with all rows of shapes
+//teach the turtle to draw the dark, then medium, then light blue rows to completely fill the canvas
 func fillCanvas () {
     fillCanvasWithDarkBlue()
     fillCanvasWithMediumBlue()
@@ -263,7 +244,8 @@ let squareSize = 5
  //fill the canvas with the shapes
 fillCanvas()
 
-
+//send code to the plotter
+turtle.copySVGToClipboard()
 
 //turning off high performance
 canvas.highPerformance = false
