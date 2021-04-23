@@ -189,17 +189,17 @@ func newRow () {
     turtle.right(by: 90)
 }
 
-//teach the turtle to draw rows dark blue shapes every 3rd row
+//teach the turtle to draw rows black shapes every 3rd row
 func fillCanvasWithDarkBlue () {
     for _ in 1...7 {
         //darkest colour
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 60, alpha: 100))
+        turtle.setPenColor(to: Color.black)
         shapeRow()
         newRow()
     }
 }
 
-//teach the turtle to draw the rows medium blue shapes every 3rd row
+//teach the turtle to draw the rows purple shapes every 3rd row
 func fillCanvasWithMediumBlue () {
     //move the turtle to starting position at bottom left of canvas above the dark blue row
     turtle.penUp()
@@ -208,13 +208,13 @@ func fillCanvasWithMediumBlue () {
     turtle.right(by: 90)
     //draw the shapes
     for _ in 1 ... 7 {
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 80, alpha: 100))
+        turtle.setPenColor(to: Color.purple)
         shapeRow()
         newRow()
     }
 }
 
-//teach the turtle to draw the rows of light blue shapes every 3rd row
+//teach the turtle to draw the rows of pink shapes every 3rd row
 func fillCanvasWithLightBlue () {
     //move turtle to starting point at bottom of canvas
     turtle.penUp()
@@ -223,7 +223,7 @@ func fillCanvasWithLightBlue () {
     turtle.right(by: 90)
     //draw the shapes
     for _ in 1 ... 6 {
-        turtle.setPenColor(to: Color.init(hue: 220, saturation: 100, brightness: 100, alpha: 100))
+        turtle.setPenColor(to: Color.blue) //Pink
         shapeRow()
         newRow()
     }
