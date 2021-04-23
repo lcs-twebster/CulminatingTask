@@ -62,7 +62,7 @@ func turtleToMiddleOfCanvas() {
 //BEGINNING OF CODE
 
 //setting square size
-let squareSize = 25
+let squareSize = 10
 
 //code for the tesselating shape
 
@@ -117,9 +117,60 @@ turtle.right(by: 60)
 
 turtle.forward(steps: 1 * squareSize)
                
+turtle.right(by: 60)
+
+turtle.forward(steps: 2 * squareSize)
+
+turtle.right(by: 60)
+
+turtle.forward(steps: 2 * squareSize)
+
+turtle.right(by: 120)
+
+turtle.forward(steps: 2 * squareSize)
+
+turtle.right(by: 60)
+
+turtle.forward(steps: 2 * squareSize)
+
+//getting in position to exit the inner hexagon
+turtle.penUp()
+
+turtle.right(by: 180)
+
+turtle.forward(steps: 2 * squareSize)
+
+turtle.left(by: 60)
+
+turtle.forward(steps: 2 * squareSize)
+
+turtle.left(by: 60)
+
+//drawing the lines exiting the inner hexagon
+turtle.penDown()
+
+turtle.forward(steps: 1 * squareSize)
+
+turtle.left(by: 60)
+
+turtle.forward(steps: 2 * squareSize)
+
+turtle.left(by: 60)
+
+turtle.forward(steps: 3 * squareSize)
+
+//getting into position to repeat the shape
+turtle.penUp()
+
+turtle.right(by: 120)
+
+turtle.forward(steps: 1 * squareSize)
+
+turtle.left(by: 90)
+
+turtle.penDown()
+
 turtle.drawSelf()
-
-
 /*:
  ## Show the Live View
  Don't see any results?
