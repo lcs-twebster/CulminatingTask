@@ -39,7 +39,7 @@ PlaygroundPage.current.liveView = canvas
 // CULMINATING TASK
 
 //turning on high performance
-canvas.highPerformance = true
+canvas.highPerformance = false
 
 //FUNCTION GLOSSARY
 
@@ -201,7 +201,7 @@ func fillCanvasWithDarkBlue () {
 
 //teach the turtle to draw the rows medium blue shapes every 3rd row
 func fillCanvasWithMediumBlue () {
-    //move the turtle to starting position at bottom of canvas
+    //move the turtle to starting position at bottom left of canvas above the dark blue row
     turtle.penUp()
     turtle.left(by: 90)
     turtle.backward(steps: 80 * squareSize)
@@ -244,13 +244,11 @@ let squareSize = 5
  //fill the canvas with the shapes
 fillCanvas()
 
-//send code to the plotter
-turtle.copySVGToClipboard()
-
 //turning off high performance
 canvas.highPerformance = false
 
-
+//send code to the plotter
+turtle.copySVGToClipboard()
 
 
 
