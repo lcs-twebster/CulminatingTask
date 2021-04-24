@@ -40,22 +40,152 @@ PlaygroundPage.current.liveView = canvas
 
 //FUNCTIONS GLOSSARY
 
-//teach the turtle to move from the origin to the centre of the canvas
-func turtleToMiddleOfCanvas() {
-    
-    //move turtle to middle of bottom axis
-    turtle.penUp()
-    turtle.forward(steps: canvas.width / 2)
-    turtle.currentHeading()
-    
-    //move turtle to center of canvas
+//teach the turtle to draw a single shape
+func drawShape () {
+    //drawing the outer hexagon
+    turtle.penDown()
+
     turtle.left(by: 90)
-    turtle.currentHeading()
+
+    turtle.forward(steps: 3 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 3 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 3 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 3 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 3 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 3 * squareSize)
+
+    //getting in position to draw the inner hexagon
     turtle.penUp()
-    turtle.forward(steps: canvas.height / 2)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.right(by: 60)
+
+    //drawing the inner hexagon
+    turtle.penDown()
+
+    turtle.forward(steps: 3 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 1 * squareSize)
+                   
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.right(by: 120)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.right(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    //getting in position to exit the inner hexagon
+    turtle.penUp()
+
+    turtle.right(by: 180)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.left(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.left(by: 60)
+
+    //drawing the lines exiting the inner hexagon
+    turtle.penDown()
+
+    turtle.forward(steps: 1 * squareSize)
+
+    turtle.left(by: 60)
+
+    turtle.forward(steps: 2 * squareSize)
+
+    turtle.left(by: 60)
+
+    turtle.forward(steps: 3 * squareSize)
+
+    //getting into position to repeat the shape
+    turtle.penUp()
+
+    turtle.right(by: 120)
+
+    turtle.forward(steps: 1 * squareSize)
+
+    turtle.left(by: 90)
+
+}
+
+//teach the turtle to draw a row left to right of 9 of the shape
+func shapeRow () {
+    for _ in 1...9 {
+        drawShape()
+    }
+}
+
+//teach the turtle to move to the start of a new centered row
+func newRow () {
+    turtle.penUp()
     
-    //turn the turtle to the right
+    turtle.left(by: 180)
+    
+    turtle.forward(steps: 47 * squareSize)
+    
     turtle.right(by: 90)
+    
+    turtle.forward(steps: 9 * squareSize)
+    
+    turtle.right(by: 90)
+}
+
+//teach the turtle to move to the starting point of the offset rows
+func offsetStart () {
+    turtle.left(by: 90)
+    turtle.backward(steps: 40 * squareSize)
+    turtle.left(by: 90)
+    turtle.forward(steps: 2 * squareSize)
+    turtle.right(by: 180)
+    
+}
+
+//teach the turtle to repeat shapeRow and newRow 5 times for the centered shapes
+func centeredRowRepeat () {
+    for _ in 1...5 {
+        shapeRow()
+        newRow()
+    }
+}
+
+//teach the turtle to repeat shapeRow and newRow 5 times for the offset shapes
+func offsetRowRepeat () {
     
 }
 
@@ -64,113 +194,11 @@ func turtleToMiddleOfCanvas() {
 //setting square size
 let squareSize = 10
 
-//code for the tesselating shape
-
-//move to middle of canvas and pen down to test the instructions for the shape
-turtleToMiddleOfCanvas()
-turtle.penDown()
-
-//drawing the outer hexagon
-turtle.left(by: 90)
-
-turtle.forward(steps: 3 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 3 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 3 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 3 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 3 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 3 * squareSize)
-
-//getting in position to draw the inner hexagon
-turtle.penUp()
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.right(by: 60)
-
-//drawing the inner hexagon
-turtle.penDown()
-
-turtle.forward(steps: 3 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 1 * squareSize)
-               
-turtle.right(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.right(by: 120)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.right(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-//getting in position to exit the inner hexagon
-turtle.penUp()
-
-turtle.right(by: 180)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.left(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.left(by: 60)
-
-//drawing the lines exiting the inner hexagon
-turtle.penDown()
-
-turtle.forward(steps: 1 * squareSize)
-
-turtle.left(by: 60)
-
-turtle.forward(steps: 2 * squareSize)
-
-turtle.left(by: 60)
-
-turtle.forward(steps: 3 * squareSize)
-
-//getting into position to repeat the shape
-turtle.penUp()
-
-turtle.right(by: 120)
-
-turtle.forward(steps: 1 * squareSize)
-
-turtle.left(by: 90)
-
-turtle.penDown()
+centeredRowRepeat()
 
 turtle.drawSelf()
+
+//newRow replace 97 with 96.5 and replace 9 with 8.5
 /*:
  ## Show the Live View
  Don't see any results?
