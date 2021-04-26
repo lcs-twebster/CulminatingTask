@@ -191,3 +191,5 @@ let squareSize = 10
 //filling the canvas with the shapes
 fillCanvas()
 
+//sending instructions to the plotter
+turtle.copySVGToClipboard()
