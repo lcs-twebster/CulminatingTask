@@ -144,8 +144,15 @@ func drawShape () {
 
 }
 
-//teach the turtle to draw a row left to right of 9 of the shape
+//teach the turtle to draw a row left to right of 8 of the shape
 func shapeRow () {
+    for _ in 1...8 {
+        drawShape()
+    }
+}
+
+//teach the turtle to draw a row of 9 of the shape
+func shapeRowNine () {
     for _ in 1...9 {
         drawShape()
     }
@@ -157,11 +164,11 @@ func newRow () {
     
     turtle.left(by: 180)
     
-    turtle.forward(steps: 47 * squareSize)
+    turtle.forward(steps: Int(round(44.15 * Double(squareSize))))
     
     turtle.right(by: 90)
     
-    turtle.forward(steps: 9 * squareSize)
+    turtle.forward(steps: Int(round(4.6 * Double(squareSize))))
     
     turtle.right(by: 90)
 }
@@ -189,15 +196,33 @@ func offsetRowRepeat () {
     
 }
 
+//fill canvas maybe?!?
+func fillCanvas () {
+    for _ in 1...5 {
+        shapeRow()
+        newRow()
+        shapeRowNine()
+        newRow()
+    }
+}
+
 //BEGINNING OF CODE
 
 //setting square size
 let squareSize = 10
 
-centeredRowRepeat()
+//centeredRowRepeat()
+
+//shapeRow()
+//newRow()
+//shapeRowNine()
+//newRow()
+//shapeRow()
+
+fillCanvas()
+
 
 turtle.drawSelf()
-
 //newRow replace 97 with 96.5 and replace 9 with 8.5
 /*:
  ## Show the Live View
