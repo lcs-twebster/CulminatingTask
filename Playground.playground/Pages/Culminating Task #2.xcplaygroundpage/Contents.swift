@@ -40,7 +40,7 @@ PlaygroundPage.current.liveView = canvas
 
 //FUNCTIONS GLOSSARY
 
-//teach the turtle to draw a single shape
+//teach the turtle to draw the single shape
 func drawShape () {
     //drawing the outer hexagon
     turtle.penDown()
@@ -145,20 +145,20 @@ func drawShape () {
 }
 
 //teach the turtle to draw a row left to right of 8 of the shape
-func shapeRow () {
+func shapeRowEight () {
     for _ in 1...8 {
         drawShape()
     }
 }
 
-//teach the turtle to draw a row of 9 of the shape
+//teach the turtle to draw a row left to right of 9 of the shape
 func shapeRowNine () {
     for _ in 1...9 {
         drawShape()
     }
 }
 
-//teach the turtle to move to the start of a new centered row
+//teach the turtle to move to the start of a new row
 func newRow () {
     turtle.penUp()
     
@@ -173,33 +173,10 @@ func newRow () {
     turtle.right(by: 90)
 }
 
-//teach the turtle to move to the starting point of the offset rows
-func offsetStart () {
-    turtle.left(by: 90)
-    turtle.backward(steps: 40 * squareSize)
-    turtle.left(by: 90)
-    turtle.forward(steps: 2 * squareSize)
-    turtle.right(by: 180)
-    
-}
-
-//teach the turtle to repeat shapeRow and newRow 5 times for the centered shapes
-func centeredRowRepeat () {
-    for _ in 1...5 {
-        shapeRow()
-        newRow()
-    }
-}
-
-//teach the turtle to repeat shapeRow and newRow 5 times for the offset shapes
-func offsetRowRepeat () {
-    
-}
-
-//fill canvas maybe?!?
+//Teach the turtle to fill the canvas by repeating shapeRowEight and shapeRowNine
 func fillCanvas () {
     for _ in 1...5 {
-        shapeRow()
+        shapeRowEight()
         newRow()
         shapeRowNine()
         newRow()
@@ -211,31 +188,6 @@ func fillCanvas () {
 //setting square size
 let squareSize = 10
 
-//centeredRowRepeat()
-
-//shapeRow()
-//newRow()
-//shapeRowNine()
-//newRow()
-//shapeRow()
-
+//filling the canvas with the shapes
 fillCanvas()
 
-
-turtle.drawSelf()
-//newRow replace 97 with 96.5 and replace 9 with 8.5
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
